@@ -9,6 +9,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     net-tools \
     websockify \
     python3-pip \
+    unzip \
     && rm -rf /var/lib/apt/lists/* && apt clean
 
 # Tạo thư mục bên trong noVNC
