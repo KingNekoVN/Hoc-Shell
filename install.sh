@@ -6,6 +6,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     qemu-utils \
     cloud-image-utils \
     novnc \
+    net-tools \
     websockify \
     python3-pip \
     && rm -rf /var/lib/apt/lists/* && apt clean
@@ -15,7 +16,7 @@ mkdir -p /data /novnc /opt/qemu /cloud-init
 
 # Tải Micro 10
 curl -L  \
--o /opt/qemu/micro10.img
+-o /opt/qemu/micro10.iso
 
 # Setup noVNC
 curl -L https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.zip -o /tmp/novnc.zip && \
@@ -37,4 +38,3 @@ clear
 echo "Đang chạy vui lòng đừng tắt"
 chmod +x start.sh && \
 bash start.sh
-
