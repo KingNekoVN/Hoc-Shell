@@ -39,4 +39,4 @@ wget -O start.sh https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/sta
 clear
 echo "Đang chạy vui lòng đừng tắt"
 chmod +x start.sh && \
-bash start.sh
+!bash start.sh
