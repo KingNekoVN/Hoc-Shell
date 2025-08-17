@@ -6,18 +6,19 @@ apt-get update && apt-get install -y --no-install-recommends \
     qemu-utils \
     cloud-image-utils \
     novnc \
-    net-tools \
     websockify \
     python3-pip \
     unzip \
+    p7zip-full \
+    wget \
     && rm -rf /var/lib/apt/lists/* && apt clean
 
 # Tạo thư mục bên trong noVNC
 mkdir -p /data /novnc /opt/qemu /cloud-init
 
 # Tải Micro 10
-curl -L  \
--o /opt/qemu/micro10.iso
+wget -P /opt/qemu https://archive.org/download/astro-os-11-24-h-2/AstroOS%2011%2024H2.iso
+qemu-img create -f qcow2 disk.img 110M
 
 # Setup noVNC
 curl -L https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.zip -o /tmp/novnc.zip && \
