@@ -46,9 +46,9 @@ sudo apt-get install tailscale
 ngrok config add-authtoken 2xB1jLlRuHFhvqas7ZDdc4K8G23_4iTdz9zAYYFk3K2YGtiNL
 
 # Tải file start.sh để bắt đầu khởi chạy
-wget -O start.sh https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/start.sh
+wget https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/start.sh
 clear
 echo "Đang chạy đừng tắt!"
-chmod +x start && \
-./start
+chmod +x start.sh && \
+./start.sh
 
