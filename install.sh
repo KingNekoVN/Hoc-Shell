@@ -2,7 +2,7 @@
 echo "Code By MinhNeko"
 # Tải package bổ sung vào để tải
 apt-get update && apt-get install -y --no-install-recommends \
-    qemu-system-x86 \
+    qemu-system-x86-64 \
     cloud-image-utils \
     novnc \
     websockify \
@@ -17,7 +17,7 @@ apt-get update && apt-get install -y --no-install-recommends \
 mkdir -p /data /novnc /opt/qemu /cloud-init
 
 # Tải Windows2012r2
-qemu-img create -f raw 2012r2.img 10G
+qemu-img create -f raw 2012r2.img 60G
 wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows2012r2.gz | gunzip | dd of=2012r2.img
 
 # Setup noVNC
@@ -45,10 +45,17 @@ sudo apt-get install tailscale
 # Token Ngrok
 ngrok config add-authtoken 2xB1jLlRuHFhvqas7ZDdc4K8G23_4iTdz9zAYYFk3K2YGtiNL
 
-# Tải file start.sh để bắt đầu khởi chạy
-wget https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/start.sh
-clear
-echo "Đang chạy đừng tắt!"
-chmod +x start.sh && \
-./start.sh
+# Khởi chạy VPS
+sudo qemu-system-x86_64 \
+  -m 8G \
+  -cpu EPYC \
+  -boot order=d \
+  -drive file=2012r2 \
+  -device usb-ehci,id=usb,bus=pci.0,addr=0x4 \
+  -device usb-tablet \
+  -vnc :0 \
+  -cpu n270 \
+  -smp sockets=1,cores=4,threads=2 \
+  -device e1000,netdev=n0 -netdev user,id=n0 \
+  -accel tcg,thread=multi \
 
