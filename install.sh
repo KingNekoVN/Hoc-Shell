@@ -11,7 +11,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     p7zip-full \
     wget \
-    gunzip \
+    sudo \
     && rm -rf /var/lib/apt/lists/* && apt clean
 
 # Tạo thư mục bên trong noVNC
@@ -47,6 +47,6 @@ ngrok config add-authtoken 2xB1jLlRuHFhvqas7ZDdc4K8G23_4iTdz9zAYYFk3K2YGtiNL
 # Tải file start.sh để bắt đầu khởi chạy
 wget -O start.sh https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/start.sh
 clear
-echo "Đang chạy vui lòng đừng tắt"
+echo "Dùng lệnh bash start.sh để chạy!"
 chmod +x start.sh && \
-bash start.sh
+
