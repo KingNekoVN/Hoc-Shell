@@ -50,7 +50,7 @@ sudo qemu-system-x86_64 \
   -m 8G \
   -cpu EPYC \
   -boot order=d \
-  -drive file=2012r2 \
+  -drive file=2012r2.img \
   -device usb-ehci,id=usb,bus=pci.0,addr=0x4 \
   -device usb-tablet \
   -vnc :0 \
