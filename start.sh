@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo Sắp xong ròi 🐧
 # Kết quả
 echo "================================================"
 echo " 🖥️  VNC: http://localhost:6080"
