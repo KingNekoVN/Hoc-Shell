@@ -35,6 +35,10 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
   && sudo apt update \
   && sudo apt install ngrok
 
+# Cài tailscale(nếu cần)
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+
 # Token Ngrok
 ngrok config add-authtoken 2xB1jLlRuHFhvqas7ZDdc4K8G23_4iTdz9zAYYFk3K2YGtiNL
 
