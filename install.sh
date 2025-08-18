@@ -37,7 +37,9 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 
 # Cài tailscale(nếu cần)
 curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up
+
+# Connect colab với tailscale
+ sudo tailscale up
 
 # Token Ngrok
 ngrok config add-authtoken 2xB1jLlRuHFhvqas7ZDdc4K8G23_4iTdz9zAYYFk3K2YGtiNL
@@ -47,4 +49,4 @@ wget -O start.sh https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/sta
 clear
 echo "Đang chạy vui lòng đừng tắt"
 chmod +x start.sh && \
-!bash start.sh
+bash start.sh
