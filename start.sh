@@ -1,8 +1,4 @@
 #!/bin/bash
-# Check ảo hóa
-virtu=$(egrep -i '^flags.*(vmx|svm)' /proc/cpuinfo | wc -l)
-if [ $virtu = 0 ] ; then echo -e "[Error] ${RED}Virtualization/KVM in your Server/VPS is OFF\nExiting...${NC}";
-else
 
 #Start VM
 sudo qemu-system-x86_64 -vnc :0 -hda 2012r2.img -smp cores=2 -m 8096M -machine usb=on -device usb-tablet
