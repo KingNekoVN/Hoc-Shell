@@ -3,7 +3,6 @@ echo "Code By MinhNeko"
 # Tải package bổ sung vào để tải
 apt-get update && apt-get install -y --no-install-recommends \
     qemu-system-x86 \
-    qemu-utils \
     cloud-image-utils \
     novnc \
     websockify \
