@@ -4,7 +4,7 @@
 echo "================================================"
 echo " 🖥️  VNC: http://localhost:6080"
 echo " Use ngrok to http(port 6080) or use tailscale and paste ip in your browser"
-echo " Code By MinhNeko and Quang Huy(Github) Youtube: youtube.com/@MinhNeko | youtube.com/@huyhuy-o2z
+echo " Code By MinhNeko and Quang Huy | Youtube: youtube.com/@MinhNeko | youtube.com/@huyhuy-o2z
 echo "================================================"
 
 #Start VM
