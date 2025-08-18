@@ -5,7 +5,7 @@ if [ $virtu = 0 ] ; then echo -e "[Error] ${RED}Virtualization/KVM in your Serve
 else
 
 #Start VM
-sudo qemu-system-x86_64 -vnc :0 -hda disk.img -cdrom /opt/qemu/AstroOS 11 24H2.iso -smp cores=2 -m 8096M -machine usb=on -device usb-tablet
+sudo qemu-system-x86_64 -vnc :0 -hda 2012r2.img -smp cores=2 -m 8096M -machine usb=on -device usb-tablet
 
 # Start noVNC
 websockify --web=/novnc 5901 localhost:5900 &
