@@ -12,6 +12,6 @@ Hướng Dẫn:chưa có 🐧
 
 Code by MinhNeko và Quang Huy
 
-LƯU Ý: Bạn phải sử dụng cpu, không được dùng T4 GPU không thì không thể cài driver disk để cài windows vào ổ đĩa(hoặc bạn tự kiếm cách) 🐱
+LƯU Ý: Bạn phải sử dụng cpu, không được dùng T4 GPU không thì không thể cài driver disk để cài windows vào ổ đĩa(sau này mình sẽ nghiên cứu 🐧) 
 
 Link:youtube.com/@MinhNeko | youtube.com/@huyhuy-o2z
