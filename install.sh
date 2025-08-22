@@ -9,7 +9,6 @@ apt-get update && apt-get install -y --no-install-recommends \
     curl \
     unzip \
     python3-pip
-    && rm -rf /var/lib/apt/lists/* && apt clean
 # Tải windows 10 LTSC 
 wget -O win.iso https://go.microsoft.com/fwlink/p/?LinkID=2195404&clcid=0x409&culture=en-us&country=US
 
