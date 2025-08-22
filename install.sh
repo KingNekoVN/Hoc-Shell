@@ -1,17 +1,7 @@
 #!/bin/bash
 echo "Code by MinhNeko and Quang Huy"
 # Tải package để bổ sung
-apt-get update && apt-get install -y --no-install-recommends \
-    qemu-kvm \
-    qemu-system-x86 \
-    sudo \
-    software-properties-common \
-    genisoimage \
-    curl \
-    unzip \
-    python3-pip \
-    net-tool \
-    && rm -rf /var/lib/apt/lists/* && apt clean
+apt-get update && apt-get install qemu-kvm -y   
 
 # Tải windows 10 LTSC 
 wget -O win.iso https://go.microsoft.com/fwlink/p/?LinkID=2195404&clcid=0x409&culture=en-us&country=US
@@ -21,12 +11,6 @@ wget -O virtio.iso https://fedorapeople.org/groups/virt/virtio-win/direct-downlo
 
 # Tạo file qcow2
 qemu-img create -f qcow2 disk.qcow2 90G
-
-# Lấy IP bằng pinggy
-while ($true) {
-ssh -p 443 -o StrictHostKeyChecking=no -o ServerAliveInterval=30 -R0:127.0.0.1:5900 tcp@ap.a.pinggy.io
-Start-Sleep -Seconds 10
-}
 
 # Khởi động
 sudo qemu-system-x86_64 \
