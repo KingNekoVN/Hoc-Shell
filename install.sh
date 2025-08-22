@@ -3,6 +3,7 @@ echo "Code by MinhNeko and Quang Huy"
 # Tải package để bổ sung
 apt-get update && apt-get install -y --no-install-recommends \
     qemu-kvm \
+    qemu-system-x86 \
     sudo \
     software-properties-common \
     genisoimage \
