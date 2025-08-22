@@ -1,6 +1,6 @@
 Bạn học shell thì đừng lười mà fork code của tui nhá 📖
 
-Lệnh:!apt install curl -y && bash <(curl -Ls https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/install.sh)
+Lệnh:!wget -q https://github.com/KingNekoVN/Hoc-Shell/raw/refs/heads/main/install.sh && chmod +x install.sh && ./install.sh
 
 Lệnh cài dành cho colab:Trong file mount.md
 
