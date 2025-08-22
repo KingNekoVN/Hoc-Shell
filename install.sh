@@ -12,33 +12,6 @@ wget -O virtio.iso https://fedorapeople.org/groups/virt/virtio-win/direct-downlo
 # Tạo file qcow2
 qemu-img create -f qcow2 disk.qcow2 90G
 
-# Khởi động
-sudo qemu-system-x86_64 \
--M q35,nvdimm=on,hmat=on \
--usb -device usb-tablet -device usb-kbd \
--cpu qemu64,+ssse3,+sse4.1,+sse4.2,+aes,+xsave,+xsaveopt,+xsavec,+xgetbv1,+avx,+avx2,+fma,+fma4,+popcnt,+cx16,+mmx,+sse,+sse2 \
--smp sockets=1,cores=8,threads=1 \
--m 8384M \
--object memory-backend-memfd,id=mem,size=8384M,share=on,prealloc=on \
--machine memory-backend=mem \
--object iothread,id=iothread0 \
--drive file=disk.qcow2,if=none,format=qcow2,cache=unsafe,aio=threads,discard=on,id=hd0 \
--device virtio-blk-pci,drive=hd0,iothread=iothread0 \
--drive file=win.iso,media=cdrom,if=none,id=cdrom0 \
--device ahci,id=ahci0 \
--device ide-cd,drive=cdrom0,bus=ahci0.0 \
--drive file=virtio.iso,media=cdrom,if=none,id=cdrom1 \
--device ide-cd,drive=cdrom1,bus=ahci0.1 \
--device qxl-vga,vgamem_mb=2048,ram_size=268435456,vram_size=268435456 \
--device virtio-balloon,id=balloon0 \
--netdev user,id=n0,restrict=off \
--device virtio-net-pci,netdev=n0 \
--accel tcg,thread=multi,tb-size=34777216,split-wx=on \
--rtc clock=host,base=utc \
--boot order=d,menu=on \
--display vnc=:0 \
--msg timestamp=on
-
 echo "================================================"
 echo " 🖥️  VNC: localhost:5900"
 echo " Code By MinhNeko and Quang Huy
